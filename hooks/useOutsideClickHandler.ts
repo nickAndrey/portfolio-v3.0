@@ -1,11 +1,6 @@
 import { RefObject, useEffect } from 'react';
 
-interface Props {
-  ref: RefObject<HTMLElement>;
-  clickOutsideCallback: () => void;
-}
-
-const useOutsideClickHandler = ({ ref, clickOutsideCallback }: Props) => {
+const useOutsideClickHandler = (ref: RefObject<HTMLElement>, clickOutsideCallback: () => void) => {
   useEffect(() => {
     function handleClickOutside(event: any) {
       if (ref.current && !ref.current.contains(event.target)) {

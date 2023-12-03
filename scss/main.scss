@@ -1,0 +1,17 @@
+@import '@/scss/shared/variables.module.scss';
+@import '@/scss/normalize.scss';
+
+:root {
+  [data-theme='light'] {
+    @include theme-light;
+  }
+
+  [data-theme='dark'] {
+    @include theme-dark;
+  }
+}
+
+html,
+body {
+  font-size: 16px;
+}

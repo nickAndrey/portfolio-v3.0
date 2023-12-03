@@ -2,6 +2,7 @@ import ThemeProvider from '@/contexts/theme';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+import Header from '@/components/common/Header/Header';
 import '@/scss/main.scss';
 import styles from '@/scss/root-layout.module.scss';
 
@@ -22,7 +23,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={inter.className}>
         <ThemeProvider>
           <div className={styles['root-layout-container']}>
-            <nav>Menu</nav>
+            <Header />
             <main>{children}</main>
           </div>
         </ThemeProvider>

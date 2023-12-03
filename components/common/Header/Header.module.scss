@@ -1,0 +1,15 @@
+@import '@/scss/shared/variables.scss';
+
+.header {
+  @include flex-row-space-between;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid var(--grey-200);
+  padding: pxScale(1) pxScale(2);
+  z-index: 1;
+}
+
+.title {
+  @include title;
+  margin: 0;
+}

@@ -1,0 +1,34 @@
+@import '@/scss/shared/variables.scss';
+
+@mixin button {
+  @include flex-row-center;
+  border-radius: pxScale(0.5);
+  border: 1px solid var(--grey-200);
+  padding: pxScale(1) pxScale(2);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--grey-100);
+  }
+
+  &:active {
+    scale: 0.95;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.primary {
+  @include button;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.secondary {
+  @include button;
+  background-color: var(--white);
+  color: var(--primary-color);
+}

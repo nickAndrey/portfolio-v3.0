@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import '@/scss/main.scss';
+import styles from '@/scss/root-layout.module.scss';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,7 +20,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <div className={styles['root-layout-container']}>
+            <nav>Menu</nav>
+            <main>{children}</main>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

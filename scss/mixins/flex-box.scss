@@ -4,9 +4,25 @@
   justify-content: center;
 }
 
+@mixin flex-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 @mixin flex-column-center {
   @include flex-center;
   flex-direction: column;
+}
+
+@mixin flex-column-start {
+  @include flex-start;
+  flex-direction: column;
+}
+
+@mixin flex-column-end {
+  @include flex-column-center;
+  justify-content: flex-end;
 }
 
 @mixin flex-row-center {

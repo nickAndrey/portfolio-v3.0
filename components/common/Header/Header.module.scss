@@ -6,7 +6,7 @@
   top: 0;
   border-bottom: 1px solid var(--grey-200);
   padding: pxScale(1) pxScale(2);
-  z-index: 1;
+  z-index: 2;
 }
 
 .title {
@@ -15,13 +15,35 @@
 }
 
 .dropdown {
+  @include flex-column-end;
   position: absolute;
   width: 100%;
-  min-height: 50vh;
   top: calc(100% + 1px);
   left: 0;
   background-color: var(--white);
   box-shadow: var(--box-shadow);
-  padding: pxScale(1) pxScale(2);
+  padding: pxScale(2);
   box-sizing: border-box;
+  animation: fade-in 0.2s ease-in-out;
+  z-index: 1;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.toggle-menu-button {
+  svg {
+    width: pxScale(3);
+    height: pxScale(3);
+
+    path {
+      fill: var(--grey-600);
+    }
+  }
 }

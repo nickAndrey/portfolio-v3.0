@@ -7,17 +7,17 @@
 @mixin subtitle {
   font-size: 1.5rem;
   font-weight: 500;
-  color: var(--grey-500);
+  color: var(--primary-color);
 }
 
 @mixin body {
   font-size: 1rem;
   font-weight: 400;
-  color: var(--grey-500);
+  color: var(--primary-color);
 }
 
 @mixin caption {
   font-size: 0.75rem;
   font-weight: 400;
-  color: var(--grey-500);
+  color: var(--primary-color);
 }

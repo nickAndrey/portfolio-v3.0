@@ -1,10 +1,13 @@
 'use client';
 
+import CloseIcon from '@/public/icons/close.svg';
+import MenuIcon from '@/public/icons/menu.svg';
 import { useRef, useState } from 'react';
-import Button from '../Button/Button';
 
 import useOutsideClickHandler from '@/hooks/useOutsideClickHandler';
+import Button from '../Button/Button';
 import styles from './Header.module.scss';
+import Navigation from './Navigation/Navigation';
 
 export default function Header() {
   const ref = useRef<HTMLElement>(null);
@@ -12,13 +15,21 @@ export default function Header() {
 
   useOutsideClickHandler(ref, () => setIsDropdownOpen(false));
 
+  const onButtonClick = () => setIsDropdownOpen((prevState) => !prevState);
+
   return (
     <header ref={ref} className={styles.header}>
       <h2 className={styles.title}>lorem ipsum</h2>
-      <Button variant="primary" type="button" onClick={() => setIsDropdownOpen((prevState) => !prevState)}>
-        X
+
+      <Button className={styles['toggle-menu-button']} onClick={onButtonClick}>
+        {isDropdownOpen ? <CloseIcon /> : <MenuIcon />}
       </Button>
-      {isDropdownOpen && <div className={styles.dropdown}>test</div>}
+
+      {isDropdownOpen && (
+        <div className={styles.dropdown}>
+          <Navigation />
+        </div>
+      )}
     </header>
   );
 }

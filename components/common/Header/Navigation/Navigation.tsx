@@ -15,39 +15,39 @@ const links = [
     label: 'Home',
   },
   {
-    href: '/about',
+    href: '/projects',
     label: 'Projects',
   },
 ];
 
 const socialLinks = [
   {
-    href: 'mailto:',
+    href: 'mailto:andrew.husiev@gmail.com',
     label: 'Email me',
     icon: <EmailIcon />,
   },
   {
-    href: 'tel:',
+    href: 'tel:+17789553606',
     label: 'Call me',
     icon: <PhoneIcon />,
   },
   {
-    href: '',
+    href: 'https://www.linkedin.com/in/andrew-husiev',
     label: 'Linkedin',
     icon: <LinkedinIcon />,
   },
   {
-    href: '',
+    href: 'https://github.com/nickAndrey',
     label: 'Github',
     icon: <GithubIcon />,
   },
   {
-    href: '',
+    href: 'https://www.upwork.com/freelancers/~01f48b7f790798bfee?viewMode=1',
     label: 'Upwork',
     icon: <UpworkIcon />,
   },
   {
-    href: '',
+    href: '/api/get-cv',
     label: 'CV',
     icon: <CvIcon />,
   },

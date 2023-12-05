@@ -1,17 +1,13 @@
 @import '@/scss/shared/variables.scss';
 
 .header {
-  @include flex-row-space-between;
+  @include flex-row-end;
   position: sticky;
   top: 0;
-  border-bottom: 1px solid var(--grey-200);
   padding: pxScale(1) pxScale(2);
+  background-color: var(--white);
+  border-bottom: 1px solid var(--grey-200);
   z-index: 2;
-}
-
-.title {
-  @include title;
-  margin: 0;
 }
 
 .dropdown {

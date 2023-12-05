@@ -1,0 +1,57 @@
+@import '@/scss/shared/variables.scss';
+
+.section {
+  @include flex-column-start;
+  position: sticky;
+  padding: pxScale(1) pxScale(2);
+  border-top: 1px solid var(--grey-200);
+  background-color: var(--white);
+  box-sizing: border-box;
+}
+
+.title {
+  @include title;
+}
+
+.description {
+  @include body;
+}
+
+.link {
+  @include flex-start;
+  @include caption;
+  text-transform: uppercase;
+  display: inline-flex;
+  gap: pxScale(0.5);
+  color: var(--primary-color);
+  text-decoration: none;
+  padding-bottom: pxScale(0.1);
+  margin-bottom: pxScale(5);
+
+  &:hover {
+    .arrow {
+      animation: bounce 0.5s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(pxScale(1));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: pxScale(30);
+  box-shadow: var(--box-shadow);
+  border-radius: pxScale(0.5);
+  overflow: hidden;
+}

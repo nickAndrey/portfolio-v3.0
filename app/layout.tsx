@@ -1,12 +1,12 @@
 import ThemeProvider from '@/contexts/theme';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Raleway } from 'next/font/google';
 
 import Header from '@/components/common/Header/Header';
 import '@/scss/main.scss';
 import styles from '@/scss/root-layout.module.scss';
 
-const inter = Inter({ subsets: ['latin'] });
+const raleway = Raleway({ subsets: ['latin'], weight: ['100', '300', '400', '500', '700'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,7 +20,7 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={raleway.className}>
         <ThemeProvider>
           <div className={styles['root-layout-container']}>
             <Header />

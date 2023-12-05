@@ -19,8 +19,6 @@ export default function Header() {
 
   return (
     <header ref={ref} className={styles.header}>
-      <h2 className={styles.title}>lorem ipsum</h2>
-
       <Button className={styles['toggle-menu-button']} onClick={onButtonClick}>
         {isDropdownOpen ? <CloseIcon /> : <MenuIcon />}
       </Button>

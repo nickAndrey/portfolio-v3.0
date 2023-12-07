@@ -1,0 +1,50 @@
+@import '@/scss/shared/variables.scss';
+
+$transition: 0.5s;
+
+.navigation {
+  width: pxScale(10);
+  height: 100%;
+  padding: pxScale(2);
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: width $transition;
+
+  &.expanded {
+    width: pxScale(50);
+  }
+}
+
+.expandedContent,
+.collapsedContent {
+  animation-fill-mode: forwards;
+  animation-duration: $transition;
+  animation-delay: $transition;
+  opacity: 0;
+}
+
+.expandedContent {
+  animation-name: fadeIn1;
+}
+
+.collapsedContent {
+  animation-name: fadeIn2;
+}
+
+@keyframes fadeIn1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

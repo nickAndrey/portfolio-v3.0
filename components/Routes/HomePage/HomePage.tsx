@@ -2,7 +2,6 @@
 
 import Button from '@/components/common/Button/Button';
 import Project from '@/types/project';
-import { useEffect, useState } from 'react';
 import styles from './HomePage.module.scss';
 import ProjectSection from './ProjectSection/ProjectSection';
 
@@ -28,16 +27,9 @@ type HomePageProps = {
 };
 
 export default function HomePage({ projects }: HomePageProps) {
-  const [headerHeight, setHeaderHeight] = useState(0);
-
-  useEffect(() => {
-    const header = document.querySelector('header');
-    setHeaderHeight(header?.clientHeight || 0);
-  }, []);
-
   return (
     <>
-      <ProjectSection headerHeight={headerHeight}>
+      <ProjectSection>
         <h2 className={styles['title']}>
           Hi, I&apos;m Andrew, web developer with expertise in React.js, Next.js, Node.js, Nest.js, Express and MongoDB.
         </h2>
@@ -53,7 +45,7 @@ export default function HomePage({ projects }: HomePageProps) {
       </ProjectSection>
 
       {projects.map((project) => (
-        <ProjectSection key={project.id} project={project} headerHeight={headerHeight} />
+        <ProjectSection key={project.id} project={project} />
       ))}
     </>
   );

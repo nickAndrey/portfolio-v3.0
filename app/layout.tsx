@@ -2,7 +2,7 @@ import ThemeProvider from '@/contexts/theme';
 import type { Metadata } from 'next';
 import { Raleway } from 'next/font/google';
 
-import Header from '@/components/common/Header/Header';
+import Navigation from '@/components/common/Navigation/Navigation';
 import '@/scss/main.scss';
 import styles from '@/scss/root-layout.module.scss';
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={raleway.className}>
         <ThemeProvider>
           <div className={styles['root-layout-container']}>
-            <Header />
+            <Navigation />
             <main>{children}</main>
           </div>
         </ThemeProvider>

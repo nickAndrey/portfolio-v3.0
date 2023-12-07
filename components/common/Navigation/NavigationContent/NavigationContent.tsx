@@ -6,7 +6,7 @@ import PhoneIcon from '@/public/icons/phone.svg';
 import UpworkIcon from '@/public/icons/upwork.svg';
 
 import Link from 'next/link';
-import styles from './Navigation.module.scss';
+import styles from './NavigationContent.module.scss';
 import SocialLinks from './SocialLinks/SocialLinks';
 
 const links = [
@@ -53,11 +53,9 @@ const socialLinks = [
   },
 ];
 
-type NavigationProps = {};
-
-export default function Navigation({}: NavigationProps) {
+export default function NavigationContent() {
   return (
-    <nav className={styles['navigation']}>
+    <div className={styles['navigation-content']}>
       <ul className={styles['navigation-list']}>
         {links.map((link, index) => (
           <li key={link.href}>
@@ -76,6 +74,6 @@ export default function Navigation({}: NavigationProps) {
           </div>
         </li>
       </ul>
-    </nav>
+    </div>
   );
 }

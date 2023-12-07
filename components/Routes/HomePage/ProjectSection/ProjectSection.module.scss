@@ -3,6 +3,8 @@
 .section {
   @include flex-column-start;
   position: sticky;
+  top: var(--mobile-navigation-height);
+  height: calc(100vh - var(--mobile-navigation-height));
   padding: pxScale(1) pxScale(2);
   border-top: 1px solid var(--grey-200);
   background-color: var(--white);

@@ -1,13 +1,9 @@
 @import '@/scss/shared/variables.scss';
 
-.header {
+.mobile-menu {
   @include flex-row-end;
-  position: sticky;
-  top: 0;
-  padding: pxScale(1) pxScale(2);
-  background-color: var(--white);
-  border-bottom: 1px solid var(--grey-200);
-  z-index: 2;
+  height: var(--mobile-navigation-height);
+  padding: 0 pxScale(2);
 }
 
 .dropdown {

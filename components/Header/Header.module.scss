@@ -4,21 +4,20 @@
   background-color: var(--primary-color);
   box-sizing: border-box;
   border-bottom: 1px solid var(--accent-color);
-  backdrop-filter: blur(3rem);
   position: sticky;
   top: 0;
   z-index: 1;
 
   @include respond-to(desktop) {
-    padding: pxToVw(16px) pxToVw(24px);
+    padding: pxToVw(16px) 0;
   }
 
   @include respond-to(tablet) {
-    padding: pxToVw(16px, tablet) pxToVw(24px, tablet);
+    padding: pxToVw(16px, tablet) 0;
   }
 
   @include respond-to(mobile) {
-    padding: pxToVw(16px, mobile) pxToVw(24px, mobile);
+    padding: pxToVw(16px, mobile) 0;
   }
 
   .nav {

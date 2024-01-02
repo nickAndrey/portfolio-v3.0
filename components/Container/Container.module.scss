@@ -2,18 +2,20 @@
 
 .container {
   margin: 0 auto;
-  padding: 0 pxToVw(24px);
   box-sizing: border-box;
 
   @include respond-to(desktop) {
     width: pxToVw(1140px);
+    padding: 0 pxToVw(24px);
   }
 
   @include respond-to(tablet) {
     width: pxToVw(720px, tablet);
+    padding: 0 pxToVw(24px, tablet);
   }
 
   @include respond-to(mobile) {
     width: 100%;
+    padding: 0 pxToVw(24px, mobile);
   }
 }

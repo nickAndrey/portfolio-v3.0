@@ -1,0 +1,40 @@
+@import '@/styles/variables.scss';
+
+.profileIntro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: var(--secondary-color);
+
+  @include respond-to(desktop) {
+    padding-top: pxToVw(100px);
+  }
+
+  @include respond-to(tablet) {
+    padding-top: pxToVw(80px, tablet);
+  }
+
+  @include respond-to(mobile) {
+    padding-top: pxToVw(60px, mobile);
+  }
+
+  .linkItem {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--secondary-color);
+    }
+
+    @include respond-to(tablet) {
+      color: var(--secondary-color);
+    }
+
+    @include respond-to(mobile) {
+      color: var(--secondary-color);
+    }
+  }
+}

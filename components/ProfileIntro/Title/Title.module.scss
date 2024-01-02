@@ -1,0 +1,23 @@
+@import '@/styles/variables.scss';
+
+.title {
+  font-weight: 500;
+
+  @include respond-to(desktop) {
+    font-size: pxToVw(72px);
+    margin-top: pxToVw(20px);
+    margin-bottom: pxToVw(20px);
+  }
+
+  @include respond-to(tablet) {
+    font-size: pxToVw(60px, tablet);
+    margin-top: pxToVw(20px, tablet);
+    margin-bottom: pxToVw(20px, tablet);
+  }
+
+  @include respond-to(mobile) {
+    font-size: pxToVw(48px, mobile);
+    margin-top: pxToVw(20px, mobile);
+    margin-bottom: pxToVw(20px, mobile);
+  }
+}

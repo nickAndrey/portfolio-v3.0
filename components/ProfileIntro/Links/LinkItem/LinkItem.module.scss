@@ -1,0 +1,42 @@
+@import '@/styles/variables.scss';
+
+.linkItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: var(--tertiary-color);
+    transform: scale(1.02);
+  }
+
+  &:first-of-type {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+  }
+
+  @include respond-to(desktop) {
+    padding: pxToVw(8px) pxToVw(16px);
+    border-radius: pxToVw(8px);
+    font-size: pxToVw(16px);
+  }
+
+  @include respond-to(tablet) {
+    padding: pxToVw(8px, tablet) pxToVw(16px, tablet);
+    border-radius: pxToVw(8px, tablet);
+    font-size: pxToVw(16px, tablet);
+  }
+
+  @include respond-to(mobile) {
+    padding: pxToVw(16px, mobile) pxToVw(24px, mobile);
+    border-radius: pxToVw(8px, mobile);
+    font-size: pxToVw(16px, mobile);
+    width: 100%;
+  }
+}

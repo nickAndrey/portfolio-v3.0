@@ -1,0 +1,49 @@
+@import '@/styles/variables.scss';
+
+.header {
+  background-color: var(--primary-color);
+  padding: pxToVw(10px) pxToVw(16px);
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--accent-color);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-size: pxToVw(16px);
+    }
+
+    .navList {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      .navItem {
+        .link {
+          display: block;
+          padding: pxToVw(8px) pxToVw(16px);
+          text-decoration: none;
+          font-size: pxToVw(16px);
+          font-weight: 400;
+          color: var(--tertiary-color);
+          border-radius: pxToVw(8px);
+          box-sizing: border-box;
+          transition: all 0.3s;
+
+          &:hover {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+          }
+        }
+      }
+    }
+  }
+}

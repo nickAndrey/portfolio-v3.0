@@ -2,12 +2,24 @@
 
 .header {
   background-color: var(--primary-color);
-  padding: pxToVw(10px) pxToVw(16px);
   box-sizing: border-box;
   border-bottom: 1px solid var(--accent-color);
+  backdrop-filter: blur(3rem);
   position: sticky;
   top: 0;
   z-index: 1;
+
+  @include respond-to(desktop) {
+    padding: pxToVw(16px) pxToVw(24px);
+  }
+
+  @include respond-to(tablet) {
+    padding: pxToVw(16px, tablet) pxToVw(24px, tablet);
+  }
+
+  @include respond-to(mobile) {
+    padding: pxToVw(16px, mobile) pxToVw(24px, mobile);
+  }
 
   .nav {
     display: flex;
@@ -17,7 +29,30 @@
     .logo {
       color: var(--secondary-color);
       text-decoration: none;
-      font-size: pxToVw(16px);
+
+      img {
+        opacity: 0.7;
+        transition: all 0.3s;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        @include respond-to(desktop) {
+          width: pxToVw(32px);
+          height: pxToVw(32px);
+        }
+
+        @include respond-to(tablet) {
+          width: pxToVw(32px, tablet);
+          height: pxToVw(32px, tablet);
+        }
+
+        @include respond-to(mobile) {
+          width: pxToVw(32px, mobile);
+          height: pxToVw(32px, mobile);
+        }
+      }
     }
 
     .navList {
@@ -26,21 +61,48 @@
       padding: 0;
       list-style: none;
 
+      @include respond-to(desktop) {
+        gap: pxToVw(16px);
+      }
+
+      @include respond-to(tablet) {
+        gap: pxToVw(16px, tablet);
+      }
+
+      @include respond-to(mobile) {
+        gap: pxToVw(16px, mobile);
+      }
+
       .navItem {
         .link {
           display: block;
-          padding: pxToVw(8px) pxToVw(16px);
-          text-decoration: none;
-          font-size: pxToVw(16px);
           font-weight: 400;
           color: var(--tertiary-color);
-          border-radius: pxToVw(8px);
           box-sizing: border-box;
+          text-decoration: none;
           transition: all 0.3s;
 
           &:hover {
             background-color: var(--accent-color);
             color: var(--secondary-color);
+          }
+
+          @include respond-to(desktop) {
+            padding: pxToVw(8px) pxToVw(16px);
+            font-size: pxToVw(16px);
+            border-radius: pxToVw(8px);
+          }
+
+          @include respond-to(tablet) {
+            padding: pxToVw(8px, tablet) pxToVw(16px, tablet);
+            font-size: pxToVw(16px, tablet);
+            border-radius: pxToVw(8px, tablet);
+          }
+
+          @include respond-to(mobile) {
+            padding: pxToVw(8px, mobile) pxToVw(16px, mobile);
+            font-size: pxToVw(16px, mobile);
+            border-radius: pxToVw(8px, mobile);
           }
         }
       }

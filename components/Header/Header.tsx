@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Header.module.scss';
 
@@ -14,14 +15,12 @@ const links = [
   },
 ];
 
-type HeaderProps = {};
-
-export default function Header({}: HeaderProps) {
+export default function Header() {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
         <Link href='/' className={styles.logo}>
-          Logo
+          <Image src='/logo.svg' alt='Logo' width={70} height={70} />
         </Link>
 
         <ul className={styles.navList}>

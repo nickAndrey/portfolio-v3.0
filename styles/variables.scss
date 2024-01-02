@@ -1,9 +1,25 @@
 $viewport-sizes: (
-  mobile: 375px,
-  tablet: 768px,
-  desktop: 1920px,
+  mobile: 374px,
+  tablet: 767px,
+  desktop: 1439px,
 );
 
 @function pxToVw($px, $viewport: desktop) {
   @return ($px / map-get($viewport-sizes, $viewport)) * 100vw;
+}
+
+@mixin respond-to($viewport) {
+  @if $viewport == mobile {
+    @media (max-width: map-get($viewport-sizes, tablet)) {
+      @content;
+    }
+  } @else if $viewport == tablet {
+    @media (min-width: map-get($viewport-sizes, tablet)) and (max-width: map-get($viewport-sizes, desktop)) {
+      @content;
+    }
+  } @else if $viewport == desktop {
+    @media (min-width: map-get($viewport-sizes, desktop)) {
+      @content;
+    }
+  }
 }

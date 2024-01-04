@@ -6,7 +6,7 @@ import Title from './Title/Title';
 
 export default function ProfileIntro() {
   return (
-    <div className={styles.profileIntro}>
+    <section className={styles.profileIntro}>
       <Photo />
       <Title text="Hello, I'm Andrew" />
       <SubTitle>
@@ -18,6 +18,6 @@ export default function ProfileIntro() {
         </a>
       </SubTitle>
       <Links />
-    </div>
+    </section>
   );
 }

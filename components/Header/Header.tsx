@@ -5,9 +5,9 @@ import styles from './Header.module.scss';
 
 const links = [
   {
-    id: 'work',
-    href: '/',
-    label: 'Work',
+    id: 'works',
+    href: '/works',
+    label: 'Works',
   },
   {
     id: 'about',

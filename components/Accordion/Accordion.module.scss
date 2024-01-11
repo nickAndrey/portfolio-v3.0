@@ -1,0 +1,126 @@
+@import '@/styles/variables.scss';
+
+.details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--accent-color);
+
+  @include respond-to(desktop) {
+    padding: pxToVw(10px);
+    border-radius: pxToVw(10px);
+  }
+
+  @include respond-to(tablet) {
+    padding: pxToVw(10px, tablet);
+    border-radius: pxToVw(10px, tablet);
+  }
+
+  @include respond-to(mobile) {
+    padding: pxToVw(10px, mobile);
+    border-radius: pxToVw(10px, mobile);
+  }
+
+  .summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--secondary-color);
+    list-style-type: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: var(--active-color);
+    }
+
+    @include respond-to(desktop) {
+      font-size: pxToVw(20px);
+      padding: pxToVw(10px);
+      border-radius: pxToVw(10px);
+    }
+
+    @include respond-to(tablet) {
+      font-size: pxToVw(20px, tablet);
+      padding: pxToVw(10px, tablet);
+      border-radius: pxToVw(10px, tablet);
+    }
+
+    @include respond-to(mobile) {
+      font-size: pxToVw(20px, mobile);
+      padding: pxToVw(10px, mobile);
+      border-radius: pxToVw(10px, mobile);
+    }
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      transition: all 0.15s ease-in-out;
+
+      @include respond-to(desktop) {
+        width: pxToVw(20px);
+        height: pxToVw(20px);
+      }
+
+      @include respond-to(tablet) {
+        width: pxToVw(20px, tablet);
+        height: pxToVw(20px, tablet);
+      }
+
+      @include respond-to(mobile) {
+        width: pxToVw(20px, mobile);
+        height: pxToVw(20px, mobile);
+      }
+
+      &::after {
+        content: '\1409';
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -70%);
+        line-height: 0;
+
+        @include respond-to(desktop) {
+          font-size: pxToVw(24px);
+        }
+
+        @include respond-to(tablet) {
+          font-size: pxToVw(24px, tablet);
+        }
+
+        @include respond-to(mobile) {
+          font-size: pxToVw(24px, mobile);
+        }
+      }
+
+      &.open {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .content {
+    color: var(--secondary-color);
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+
+    @include respond-to(desktop) {
+      padding: pxToVw(10px);
+      border-radius: pxToVw(10px);
+    }
+
+    @include respond-to(tablet) {
+      padding: pxToVw(10px, tablet);
+      border-radius: pxToVw(10px, tablet);
+    }
+
+    @include respond-to(mobile) {
+      padding: pxToVw(10px, mobile);
+      border-radius: pxToVw(10px, mobile);
+    }
+  }
+}

@@ -1,6 +1,6 @@
 'use client';
 
-import { MouseEvent, ReactNode, useEffect, useState } from 'react';
+import { MouseEvent, ReactNode, useEffect, useRef, useState } from 'react';
 import styles from './Accordion.module.scss';
 
 type AccordionProps = {
@@ -10,6 +10,8 @@ type AccordionProps = {
 };
 
 export default function Accordion({ title, children, open = false }: AccordionProps) {
+  const contentRef = useRef<HTMLDivElement>(null);
+
   const [isOpen, setIsOpen] = useState(open);
 
   const onToggle = (e: MouseEvent<HTMLElement>) => {
@@ -19,14 +21,22 @@ export default function Accordion({ title, children, open = false }: AccordionPr
 
   useEffect(() => setIsOpen(open), [open]);
 
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.style.height = isOpen ? `${contentRef.current.scrollHeight}px` : '0px';
+    }
+  }, [isOpen]);
+
   return (
-    <details open={isOpen} className={styles.details}>
-      <summary onClick={onToggle} className={styles.summary}>
+    <div className={styles.details}>
+      <div onClick={onToggle} className={styles.summary}>
         {title}
         <span className={[styles.icon, isOpen ? styles.open : styles.close].join(' ')} />
-      </summary>
+      </div>
 
-      <div className={styles.content}>{children}</div>
-    </details>
+      <div ref={contentRef} style={{ transition: 'var(--transition)' }}>
+        <div className={styles.content}>{children}</div>
+      </div>
+    </div>
   );
 }

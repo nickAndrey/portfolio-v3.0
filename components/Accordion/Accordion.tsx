@@ -1,6 +1,7 @@
 'use client';
 
 import { MouseEvent, ReactNode, useEffect, useRef, useState } from 'react';
+import AngleRight from '../icons/AngleRight';
 import styles from './Accordion.module.scss';
 
 type AccordionProps = {
@@ -31,7 +32,9 @@ export default function Accordion({ title, children, open = false }: AccordionPr
     <div className={styles.details}>
       <div onClick={onToggle} className={styles.summary}>
         {title}
-        <span className={[styles.icon, isOpen ? styles.open : styles.close].join(' ')} />
+        <span className={[styles['icon-container'], isOpen ? styles.open : ''].join(' ')}>
+          <AngleRight />
+        </span>
       </div>
 
       <div ref={contentRef} style={{ transition: 'var(--transition)' }}>

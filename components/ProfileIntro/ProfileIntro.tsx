@@ -4,17 +4,26 @@ import styles from './ProfileIntro.module.scss';
 import SubTitle from './SubTitle/SubTitle';
 import Title from './Title/Title';
 
-export default function ProfileIntro() {
+type ProfileIntroProps = {
+  title: string;
+  subTitle: string;
+  currentCompany: {
+    name: string;
+    url: string;
+  };
+};
+
+export default function ProfileIntro({ title, subTitle, currentCompany }: ProfileIntroProps) {
   return (
     <section className={styles.profileIntro}>
       <Photo />
-      <Title text="Hello, I'm Andrew" />
+      <Title text={title} />
       <SubTitle>
-        I&apos;m front-end developer based in Vancouver BC Canada.
+        {subTitle}
         <br />
         Currently working at{' '}
-        <a href='https://www.wavebi.com/' target='_blank' className={styles.linkItem}>
-          Wave business intelligence Inc.
+        <a href={currentCompany.url} target='_blank' className={styles.linkItem}>
+          {currentCompany.name}
         </a>
       </SubTitle>
       <Links />

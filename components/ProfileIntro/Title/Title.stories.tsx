@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Title from './Title';
 
 const meta = {
-  title: 'Title',
   component: Title,
   parameters: {
     controls: { expanded: true },

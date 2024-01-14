@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Photo from './Photo';
 
 const meta = {
-  title: 'Photo',
   component: Photo,
   parameters: {
     controls: { expanded: true },

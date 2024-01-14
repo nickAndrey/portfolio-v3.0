@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import SubTitle from './SubTitle';
 
 const meta = {
-  title: 'SubTitle',
   component: SubTitle,
   parameters: {
     controls: { expanded: true },

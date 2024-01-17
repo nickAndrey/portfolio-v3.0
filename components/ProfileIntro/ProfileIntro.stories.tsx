@@ -16,11 +16,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    title: "Hello, I'm Andrew",
-    subTitle: `I'm front-end developer based in Vancouver BC Canada.`,
-    currentCompany: {
-      name: 'Wave business intelligence Inc.',
-      url: 'https://www.wavebi.com/',
+    intro: {
+      title: "Hello, I'm Andrew",
+      supTitle: `I'm front-end developer based in Vancouver BC Canada.`,
+      currentCompany: {
+        name: 'Wave business intelligence Inc.',
+        url: 'https://www.wavebi.com/',
+      },
     },
   },
 };

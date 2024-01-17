@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import SubTitle from './SubTitle';
+import SupTitle from './SupTitle';
 
 const meta = {
-  component: SubTitle,
+  component: SupTitle,
   parameters: {
     controls: { expanded: true },
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {},
-} satisfies Meta<typeof SubTitle>;
+} satisfies Meta<typeof SupTitle>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: 'SubTitle',
+    children: 'SupTitle',
   },
 };

@@ -1,0 +1,26 @@
+@import '@/styles/variables.scss';
+
+.row {
+  display: grid;
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: pxToVw(4px);
+  }
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: pxToVw(4px, tablet);
+  }
+
+  @include respond-to(mobile) {
+    grid-template-columns: 1fr;
+    gap: pxToVw(8px, mobile);
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

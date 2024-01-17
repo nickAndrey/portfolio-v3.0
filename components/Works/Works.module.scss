@@ -4,50 +4,28 @@
   position: relative;
   color: var(--secondary-color);
 
-  .table {
-    width: 100%;
-    border-collapse: collapse;
+  .title {
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    box-sizing: border-box;
 
-    th,
-    td {
-      font-weight: 300;
-      text-align: left;
-      box-sizing: border-box;
-
-      @include respond-to(desktop) {
-        padding: pxToVw(16px) pxToVw(8px);
-        font-size: pxToVw(16px);
-      }
-
-      @include respond-to(tablet) {
-        padding: pxToVw(16px, tablet) pxToVw(8px, tablet);
-        font-size: pxToVw(16px, tablet);
-      }
-
-      @include respond-to(mobile) {
-        padding: pxToVw(16px, mobile) pxToVw(8px, mobile);
-        font-size: pxToVw(16px, mobile);
-      }
+    @include respond-to(desktop) {
+      font-size: pxToVw(48px);
+      margin-top: pxToVw(64px);
+      margin-bottom: pxToVw(32px);
     }
 
-    thead {
-      background-color: var(--accent-color);
-
-      tr {
-        border-bottom: 1px solid var(--accent-color);
-      }
+    @include respond-to(tablet) {
+      font-size: pxToVw(48px, tablet);
+      margin-top: pxToVw(64px, tablet);
+      margin-bottom: pxToVw(32px, tablet);
     }
 
-    .imageRow {
-      border-bottom: 2px solid var(--accent-color);
-
-      @include respond-to(mobile) {
-        img {
-          width: 100%;
-          height: auto;
-          display: block;
-        }
-      }
+    @include respond-to(mobile) {
+      font-size: pxToVw(48px, mobile);
+      margin-top: pxToVw(64px, mobile);
+      margin-bottom: pxToVw(32px, mobile);
     }
   }
 }

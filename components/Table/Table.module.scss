@@ -1,0 +1,48 @@
+@import '@/styles/variables.scss';
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    font-weight: 300;
+    text-align: left;
+    box-sizing: border-box;
+
+    @include respond-to(desktop) {
+      padding: pxToVw(16px) pxToVw(8px);
+      font-size: pxToVw(16px);
+    }
+
+    @include respond-to(tablet) {
+      padding: pxToVw(16px, tablet) pxToVw(8px, tablet);
+      font-size: pxToVw(16px, tablet);
+    }
+
+    @include respond-to(mobile) {
+      padding: pxToVw(16px, mobile) pxToVw(8px, mobile);
+      font-size: pxToVw(16px, mobile);
+    }
+  }
+
+  thead {
+    background-color: var(--accent-color);
+
+    tr {
+      border-bottom: 1px solid var(--accent-color);
+    }
+  }
+
+  .imageRow {
+    border-bottom: 2px solid var(--accent-color);
+
+    @include respond-to(mobile) {
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+}

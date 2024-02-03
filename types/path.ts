@@ -1,8 +1,8 @@
 enum Path {
-  HOME = '/',
-  PORTFOLIO = '/portfolio',
-  NOT_FOUND = '/404',
-  SERVER_ERROR = '/500',
+  Home = '/',
+  Portfolio = '/portfolio',
+  Not_Found = '/404',
+  Server_Error = '/500',
 }
 
 export default Path;

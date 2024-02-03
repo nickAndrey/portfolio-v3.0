@@ -1,6 +1,5 @@
 import Container from '@/components/Container/Container';
 import ProfileIntro from '@/components/ProfileIntro/ProfileIntro';
-import Works from '@/components/Works/Works';
 import Intro from '@/types/intro';
 import Project from '@/types/project';
 import request, { gql } from 'graphql-request';
@@ -19,6 +18,9 @@ const projectsQuery = gql`
         url
         id
       }
+      position
+      startDate
+      endDate
     }
   }
 `;
@@ -40,7 +42,6 @@ export default async function Home() {
   return (
     <Container>
       <ProfileIntro intro={intro} />
-      <Works projects={projects} />
     </Container>
   );
 }

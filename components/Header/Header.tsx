@@ -1,18 +1,18 @@
-import Image from 'next/image';
+import Path from '@/types/path';
 import Link from 'next/link';
 import Container from '../Container/Container';
 import styles from './Header.module.scss';
 
 const links = [
   {
-    id: 'works',
-    href: '/works',
-    label: 'Works',
+    id: 'home',
+    href: Path.Home,
+    label: 'Home',
   },
   {
-    id: 'about',
-    href: '/',
-    label: 'About Me',
+    id: 'portfolio',
+    href: Path.Portfolio,
+    label: 'Portfolio',
   },
 ];
 
@@ -21,8 +21,8 @@ export default function Header() {
     <header className={styles.header}>
       <Container>
         <nav className={styles.nav}>
-          <Link href='/' className={styles.logo}>
-            <Image src='/logo.svg' alt='Logo' width={70} height={70} />
+          <Link href='/' className={styles.author}>
+            Andrew Husiev
           </Link>
 
           <ul className={styles.navList}>

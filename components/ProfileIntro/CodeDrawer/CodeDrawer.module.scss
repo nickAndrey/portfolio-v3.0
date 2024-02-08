@@ -1,0 +1,59 @@
+@import '@/styles/variables.scss';
+
+.container {
+  white-space: pre-wrap;
+  background-color: rgba(92, 92, 92, 0.9);
+
+  @include respond-to(desktop) {
+    padding: pxToVw(20px);
+  }
+
+  @include respond-to(tablet) {
+    padding: pxToVw(20px, tablet);
+  }
+
+  @include respond-to(mobile) {
+    padding: pxToVw(20px, mobile);
+  }
+
+  code {
+    @include respond-to(desktop) {
+      font-size: pxToVw(12px);
+      line-height: pxToVw(20px);
+    }
+
+    @include respond-to(tablet) {
+      font-size: pxToVw(12px, tablet);
+      line-height: pxToVw(20px, tablet);
+    }
+
+    @include respond-to(mobile) {
+      font-size: pxToVw(12px, mobile);
+      line-height: pxToVw(20px, mobile);
+    }
+  }
+}
+
+.type-effect {
+  display: inline-block;
+  border-right: 2px solid;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+  animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}

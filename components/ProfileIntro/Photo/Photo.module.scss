@@ -3,8 +3,6 @@
 .photoContainer {
   margin: 0 auto;
   position: relative;
-  overflow: hidden;
-  border-radius: 50%;
 
   @include respond-to(desktop) {
     width: pxToVw(300px);
@@ -17,8 +15,8 @@
   }
 
   @include respond-to(mobile) {
-    width: pxToVw(200px, mobile);
-    height: pxToVw(200px, mobile);
+    width: pxToVw(250px, mobile);
+    height: pxToVw(250px, mobile);
   }
 
   img {
@@ -26,5 +24,36 @@
     height: 100%;
     object-fit: cover;
     filter: grayscale(100%);
+  }
+
+  .code-drawer {
+    position: absolute;
+    transform: translateZ(40px);
+    overflow: hidden;
+    z-index: 1;
+
+    @include respond-to(desktop) {
+      width: pxToVw(200px);
+      height: pxToVw(150px);
+      bottom: pxToVw(-70px);
+      right: pxToVw(-25px);
+      transform: translateZ(40px);
+    }
+
+    @include respond-to(tablet) {
+      width: pxToVw(200px, tablet);
+      height: pxToVw(150px, tablet);
+      bottom: pxToVw(-80px, tablet);
+      right: pxToVw(-25px, tablet);
+      transform: translateZ(40px);
+    }
+
+    @include respond-to(mobile) {
+      width: 100%;
+      height: pxToVw(150px, mobile);
+      bottom: pxToVw(-100px, mobile);
+      right: pxToVw(-25px, mobile);
+      transform: translateZ(40px);
+    }
   }
 }

@@ -1,9 +1,6 @@
 import Intro from '@/types/intro';
-import Links from './Links/Links';
 import Photo from './Photo/Photo';
 import styles from './ProfileIntro.module.scss';
-import SupTitle from './SupTitle/SupTitle';
-import Title from './Title/Title';
 
 type ProfileIntroProps = {
   intro: Intro;
@@ -15,7 +12,7 @@ export default function ProfileIntro({ intro }: ProfileIntroProps) {
   return (
     <section className={styles.profileIntro}>
       <Photo />
-      <Title text={title} />
+      {/* <Title text={title} />
       <SupTitle>
         {supTitle}
         <br />
@@ -24,7 +21,7 @@ export default function ProfileIntro({ intro }: ProfileIntroProps) {
           {currentCompany.name}
         </a>
       </SupTitle>
-      <Links />
+      <Links /> */}
     </section>
   );
 }
